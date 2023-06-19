@@ -21,4 +21,10 @@ interface AlarmDao {
 
     @Update
     suspend fun saveSchedule(schedule: Schedule)
+
+    @Query("UPDATE Schedule SET alarmName = :newName WHERE alarmId = :alarmId ")
+    suspend fun setNewName(alarmId: Int, newName: String)
+
+    @Query("UPDATE Schedule SET hour = :hour, minute = :minute WHERE alarmId = :alarmId ")
+    suspend fun updateTime(alarmId: Int, hour: Int, minute: Int)
 }

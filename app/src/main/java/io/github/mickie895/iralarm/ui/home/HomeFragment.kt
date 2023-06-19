@@ -8,9 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.mickie895.iralarm.databinding.FragmentHomeBinding
+import io.github.mickie895.iralarm.model.data.Schedule
+import io.github.mickie895.iralarm.ui.home.adapter.AlarmEditListener
+import io.github.mickie895.iralarm.ui.home.adapter.ScheduleListAdapter
+import io.github.mickie895.iralarm.ui.home.dialog.AlarmNameEditDialog
+import io.github.mickie895.iralarm.ui.home.dialog.AlarmTimePickDialog
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : AlarmEditListener, Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -35,7 +40,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ScheduleListAdapter(requireContext())
+        val adapter = ScheduleListAdapter(requireContext(), this)
         binding.alarmList.adapter = adapter
         viewModel.alarmList.observe(viewLifecycleOwner){
             adapter.submitList(it)
@@ -45,5 +50,18 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun timeEditClicked(schedule: Schedule) {
+        val timePickDialog = AlarmTimePickDialog(schedule)
+        timePickDialog.show(parentFragmentManager, "AlarmTimePick")
+    }
+
+    override fun deleteClicked(schedule: Schedule) {
+    }
+
+    override fun nameEditClicked(schedule: Schedule) {
+        val nameEditDialog = AlarmNameEditDialog(schedule)
+        nameEditDialog.show(parentFragmentManager, "AlarmNameEdit")
     }
 }

@@ -18,4 +18,9 @@
     <string name="edit_time">Edit time</string>
     <string name="description_new_alarm">Add new item</string>
     <string name="time_format">%1$02d:%2$02d</string>
+    <string name="description_alarm_name_edit">Alarm name</string>
+    <string name="edit_name">Edit name</string>
+    <string name="hint_alarm_name_edit">Input new alarm name</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cansel">Cansel</string>
 </resources>

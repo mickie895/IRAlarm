@@ -10,4 +10,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="label_name">Name</string>
+    <string name="label_time">Time</string>
+    <string name="label_repeat">Repeat</string>
+    <string name="button_edit_repeat">Edit Repeat</string>
+    <string name="button_description_delete">Delete this item.</string>
+    <string name="edit_time">Edit time</string>
+    <string name="description_new_alarm">Add new item</string>
+    <string name="time_format">%1$02d:%2$02d</string>
 </resources>

@@ -14,11 +14,11 @@ interface AlarmDao {
     fun getScheduleList(): Flow<List<Schedule>>
 
     @Insert
-    fun addNewSchedule(schedule: Schedule)
+    suspend fun addNewSchedule(schedule: Schedule = Schedule())
 
     @Delete
-    fun removeSchedule(schedule: Schedule)
+    suspend fun removeSchedule(schedule: Schedule)
 
     @Update
-    fun saveSchedule(schedule: Schedule)
+    suspend fun saveSchedule(schedule: Schedule)
 }

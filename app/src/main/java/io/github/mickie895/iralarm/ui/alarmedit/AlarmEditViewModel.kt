@@ -1,6 +1,7 @@
-package io.github.mickie895.iralarm.ui.home.dialog
+package io.github.mickie895.iralarm.ui.alarmedit
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.mickie895.iralarm.model.database.AlarmDatabase
@@ -8,12 +9,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlarmTimePickViewModel @Inject constructor(alarmDatabase: AlarmDatabase) : ViewModel() {
+class AlarmEditViewModel @Inject constructor(alarmDatabase: AlarmDatabase) : ViewModel() {
     private val alarmDao = alarmDatabase.alarmDao()
+    val alarmList = alarmDao.getScheduleList().asLiveData()
 
-    fun setNewTime(position: Int, hour: Int, minute: Int) {
+    fun addNewAlarm() {
         viewModelScope.launch {
-            alarmDao.updateTime(position, hour, minute)
+            alarmDao.addNewSchedule()
         }
     }
 }

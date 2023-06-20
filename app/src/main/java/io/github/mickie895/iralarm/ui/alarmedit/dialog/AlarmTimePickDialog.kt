@@ -1,4 +1,4 @@
-package io.github.mickie895.iralarm.ui.home.dialog
+package io.github.mickie895.iralarm.ui.alarmedit.dialog
 
 import android.app.Dialog
 import android.app.TimePickerDialog

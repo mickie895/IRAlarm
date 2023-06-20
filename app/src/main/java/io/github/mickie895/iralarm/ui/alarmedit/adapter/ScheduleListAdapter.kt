@@ -1,4 +1,4 @@
-package io.github.mickie895.iralarm.ui.home.adapter
+package io.github.mickie895.iralarm.ui.alarmedit.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context

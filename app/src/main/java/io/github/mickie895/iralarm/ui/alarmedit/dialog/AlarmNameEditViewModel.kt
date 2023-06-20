@@ -1,4 +1,4 @@
-package io.github.mickie895.iralarm.ui.home.dialog
+package io.github.mickie895.iralarm.ui.alarmedit.dialog
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,11 +9,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlarmWeekEditViewModel @Inject constructor(database: AlarmDatabase): ViewModel() {
-    private val dao = database.alarmDao()
-    fun setNewWeekDayItem(scheduleSource: Schedule, newEnableArray: BooleanArray) {
+class AlarmNameEditViewModel @Inject constructor(alarmDatabase: AlarmDatabase) : ViewModel() {
+    private val dao = alarmDatabase.alarmDao()
+    fun setNewName(schedule: Schedule, newName: String) {
         viewModelScope.launch {
-            dao.saveSchedule(scheduleSource.createEnableChangedItem(newEnableArray))
+            dao.setNewName(schedule.alarmId, newName)
         }
     }
 }

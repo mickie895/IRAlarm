@@ -1,4 +1,4 @@
-package io.github.mickie895.iralarm.ui.home.adapter
+package io.github.mickie895.iralarm.ui.alarmedit.adapter
 
 import io.github.mickie895.iralarm.model.data.Schedule
 

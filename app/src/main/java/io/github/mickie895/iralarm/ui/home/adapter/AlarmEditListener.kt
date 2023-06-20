@@ -6,4 +6,5 @@ interface AlarmEditListener {
     fun timeEditClicked(schedule: Schedule)
     fun deleteClicked(schedule: Schedule)
     fun nameEditClicked(schedule: Schedule)
+    fun weekEnableClicked(schedule: Schedule)
 }

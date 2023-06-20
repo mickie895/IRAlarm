@@ -23,4 +23,7 @@
     <string name="hint_alarm_name_edit">Input new alarm name</string>
     <string name="button_ok">OK</string>
     <string name="button_cansel">Cansel</string>
+    <string name="delete_alarm_confirm">I will delete this item: %s.
+    This operation can\'t rollback.</string>
+    <string name="no_repeat">None.</string>
 </resources>

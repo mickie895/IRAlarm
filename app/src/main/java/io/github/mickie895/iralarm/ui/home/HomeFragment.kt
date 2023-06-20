@@ -11,8 +11,10 @@ import io.github.mickie895.iralarm.databinding.FragmentHomeBinding
 import io.github.mickie895.iralarm.model.data.Schedule
 import io.github.mickie895.iralarm.ui.home.adapter.AlarmEditListener
 import io.github.mickie895.iralarm.ui.home.adapter.ScheduleListAdapter
+import io.github.mickie895.iralarm.ui.home.dialog.AlarmDeleteDialog
 import io.github.mickie895.iralarm.ui.home.dialog.AlarmNameEditDialog
 import io.github.mickie895.iralarm.ui.home.dialog.AlarmTimePickDialog
+import io.github.mickie895.iralarm.ui.home.dialog.AlarmWeekEditDialog
 
 @AndroidEntryPoint
 class HomeFragment : AlarmEditListener, Fragment() {
@@ -58,10 +60,17 @@ class HomeFragment : AlarmEditListener, Fragment() {
     }
 
     override fun deleteClicked(schedule: Schedule) {
+        val deleteConfirmDialog = AlarmDeleteDialog(schedule)
+        deleteConfirmDialog.show(parentFragmentManager, "AlarmDelete")
     }
 
     override fun nameEditClicked(schedule: Schedule) {
         val nameEditDialog = AlarmNameEditDialog(schedule)
         nameEditDialog.show(parentFragmentManager, "AlarmNameEdit")
+    }
+
+    override fun weekEnableClicked(schedule: Schedule) {
+        val weekEditDialog = AlarmWeekEditDialog(schedule)
+        weekEditDialog.show(parentFragmentManager, "WeekEnableEdit")
     }
 }

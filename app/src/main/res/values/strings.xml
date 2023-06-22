@@ -26,4 +26,18 @@
     <string name="delete_alarm_confirm">I will delete this item: %s.
     This operation can\'t rollback.</string>
     <string name="no_repeat">None.</string>
+    <string name="label_task_list">Task List</string>
+    <string name="label_ir_data">IR Data</string>
+    <string name="hint_ir_data">Send data to control (HEX)</string>
+    <string name="label_binary_data">Binary data</string>
+    <string name="label_interval">Interval(sec)</string>
+    <string name="hint_interval_edit">Interval after send</string>
+    <string name="label_signal_format">IR Signal Format</string>
+    <string name="hint_t_input">IR ON length(usec)</string>
+    <string name="label_t">Tick length</string>
+    <string name="hint_ir_name">IR Task Name</string>
+    <string name="hint_button_save">Save this task</string>
+    <string name="label_assign_schedules">Assigned Schedules</string>
+    <string name="label_task">Tasks</string>
+    <string name="description_delete_ir_task">Delete this task</string>
 </resources>

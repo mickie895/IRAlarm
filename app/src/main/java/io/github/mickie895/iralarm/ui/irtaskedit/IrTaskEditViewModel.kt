@@ -1,10 +1,10 @@
-package io.github.mickie895.iralarm.ui.gallery
+package io.github.mickie895.iralarm.ui.irtaskedit
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class IrTaskEditViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"

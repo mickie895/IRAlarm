@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="io.github.mickie895.iralarm.ui.gallery.GalleryFragment"
+        android:name="io.github.mickie895.iralarm.ui.irtaskedit.IrTaskEditFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_ir_task_edit" />
 
     <fragment
         android:id="@+id/nav_slideshow"

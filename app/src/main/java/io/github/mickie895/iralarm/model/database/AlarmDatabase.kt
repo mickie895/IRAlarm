@@ -9,12 +9,19 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import io.github.mickie895.iralarm.model.data.IRData
+import io.github.mickie895.iralarm.model.data.IRFormat
 import io.github.mickie895.iralarm.model.data.Schedule
+import io.github.mickie895.iralarm.model.data.ScheduleAssignment
 import javax.inject.Singleton
 
-@Database(entities = [Schedule::class], version = 1)
+@Database(entities = [Schedule::class, IRFormat::class, IRData::class, ScheduleAssignment::class], version = 1)
 abstract class AlarmDatabase: RoomDatabase() {
     abstract fun alarmDao(): AlarmDao
+
+    abstract fun taskAssignDao(): TaskAssignDao
+
+    abstract fun irTaskDao(): IrTaskDao
 }
 
 @Module

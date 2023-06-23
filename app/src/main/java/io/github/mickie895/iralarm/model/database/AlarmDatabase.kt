@@ -35,4 +35,16 @@ object AlarmDatabaseModule{
             AlarmDatabase::class.java, "database-name"
         ).build()
     }
+
+    @Provides
+    fun provideAlarmDao(alarmDatabase: AlarmDatabase): AlarmDao
+            = alarmDatabase.alarmDao()
+
+    @Provides
+    fun provideTaskAssignDao(alarmDatabase: AlarmDatabase): TaskAssignDao
+            = alarmDatabase.taskAssignDao()
+
+    @Provides
+    fun provideIrTaskDao(alarmDatabase: AlarmDatabase): IrTaskDao
+            = alarmDatabase.irTaskDao()
 }

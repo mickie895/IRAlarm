@@ -16,6 +16,14 @@
         tools:text="IR Task Name" />
 
     <ImageButton
+        android:id="@+id/button_edit_task"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="0"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        android:contentDescription="@string/description_edit_title"/>
+
+    <ImageButton
         android:id="@+id/ir_task_delete_button"
         android:layout_width="48dp"
         android:layout_height="48dp"

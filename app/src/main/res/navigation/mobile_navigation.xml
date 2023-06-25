@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_alarm_edit" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_ir_task_edit"
         android:name="io.github.mickie895.iralarm.ui.irtaskedit.IrTaskEditFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_ir_task_edit" />
+        android:label="@string/menu_assign"
+        tools:layout="@layout/fragment_ir_task_edit" >
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="io.github.mickie895.iralarm.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_ir_task_assign"
+        android:name="io.github.mickie895.iralarm.ui.taskassign.TaskAssignFragment"
+        android:label="TaskAssignFragment" >
+        <action
+            android:id="@+id/action_nav_ir_task_assign_to_nav_ir_task_edit"
+            app:destination="@id/nav_ir_task_edit" />
+    </fragment>
 </navigation>
